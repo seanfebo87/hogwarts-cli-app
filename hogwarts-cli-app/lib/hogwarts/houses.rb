@@ -1,37 +1,23 @@
 class Hogwarts::Houses
-    attr_accessor :name, :url, :bio, :sorting_hat_poem
-    def initialize(name, url)
-        @name = name
+    attr_accessor :url, :bio, :sorting_hat_poem
+    def initialize(url)
         @url = url
 
-def call
-    puts "1. Gryffindor
-          2. Hufflepuff
-          3. Ravenclaw
-          4. Slytherin
-          5. Get Sorted!"
-    choice
+
 end
 
-def choice
-    input = nil
-    while input != "exit"
-        input = gets.strip
-            case input
-            when "1"
-                puts "G"
-            when "2"
-                puts "H"
-            when "3"
-                puts "R"
-            when "4"
-                puts "S"
-            else
-                puts "Please try again"
+def call
+    self.get_house_bio(url)
+
+end
     end
 
 def sort
     ["GRYFFINDOR!", "HUFFLEPUFF", "RAVENCLAW", "SLYTHERIN"].random
 end
+
+def g
+    self.get_house_bio(url)
+
 
 end

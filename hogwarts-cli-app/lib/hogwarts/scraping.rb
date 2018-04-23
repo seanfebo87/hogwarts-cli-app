@@ -4,11 +4,12 @@ require 'pry'
 class Scraping
 
 def self.get_house_bio(url)
-    house = Hogwarts::Houses.new(name, url)
+    house = Hogwarts::Houses.new(url)
     doc = Nokogiri::HTML(open(url))
     house.bio = doc.css(".subject-description p").text
     house.sorting_hat_poem = doc.css(".quote-artefact p").text
 end
+
 
 def self.subject_list(url)
     list = []
