@@ -8,7 +8,8 @@ def call
     puts "1. Gryffindor
           2. Hufflepuff
           3. Ravenclaw
-          4. Slytherin"
+          4. Slytherin
+          5. Get Sorted!"
     choice
 end
 
@@ -28,4 +29,9 @@ def choice
             else
                 puts "Please try again"
     end
+
+def sort
+    ["GRYFFINDOR!", "HUFFLEPUFF", "RAVENCLAW", "SLYTHERIN"].random
+end
+
 end
