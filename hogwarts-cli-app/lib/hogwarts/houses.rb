@@ -1,4 +1,5 @@
 class Hogwarts::Houses
+    attr_accessor :name, :bio
 
 def call
     puts "1. Gryffindor
