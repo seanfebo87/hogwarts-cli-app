@@ -8,4 +8,15 @@ def self.get_house_bio(url)
     doc = Nokogiri::HTML(open(url))
     house.bio = doc.css(".subject-description p").text
     house.sorting_hat_poem = doc.css(".quote-artefact p").text
+end
+
+def self.subject_list(url)
+    list = []
+    doc = Nokogiri::HTML(open(url))
+    info = doc.search("#toc-list a")
+    info.each do |name|
+        list << name.text
+    end
+    list
+end
 
