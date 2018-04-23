@@ -1,5 +1,8 @@
 class Hogwarts::Houses
-    attr_accessor :name, :bio
+    attr_accessor :name, :url, :bio, :sorting_hat_poem
+    def initialize(name, url)
+        @name = name
+        @url = url
 
 def call
     puts "1. Gryffindor

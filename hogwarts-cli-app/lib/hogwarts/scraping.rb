@@ -4,8 +4,8 @@ require 'pry'
 class Scraping
 
 def self.get_house_bio(url)
-    gryf = Gryf.new
+    house = Hogwarts::Houses.new(name, url)
     doc = Nokogiri::HTML(open(url))
-    gryf.bio = doc.css(".subject-description p").text
-    gryf.sorting_hat_poem = doc.css(".quote-artefact p").text
+    house.bio = doc.css(".subject-description p").text
+    house.sorting_hat_poem = doc.css(".quote-artefact p").text
 
