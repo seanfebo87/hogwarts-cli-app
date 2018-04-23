@@ -15,8 +15,10 @@ def choice
         input = gets.strip
             case input
             when "1"
-                House
+                Hogwarts::Houses.call
             when "2"
-                Studies
+                Hogwarts::Studies.call
+            else
+                puts "Please try again"
     end
 end

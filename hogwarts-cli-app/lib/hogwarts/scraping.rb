@@ -13,10 +13,13 @@ end
 def self.subject_list(url)
     list = []
     doc = Nokogiri::HTML(open(url))
-    info = doc.search("#toc-list a")
+    name = doc.search("#toc-list a")
     info.each do |name|
         list << name.text
     end
     list
 end
 
+def subject_info(url)
+    doc = Nokogiri::HTML
+    doc.css(".description #CourseDesc").text
