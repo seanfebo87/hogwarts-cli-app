@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require "bundler/setup"
 require "./lib/hogwarts"
 
 Hogwarts::CLI.new.start 
