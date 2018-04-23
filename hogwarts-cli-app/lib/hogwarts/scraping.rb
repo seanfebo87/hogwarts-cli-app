@@ -7,4 +7,5 @@ def self.get_house_bio(url)
     gryf = Gryf.new
     doc = Nokogiri::HTML(open(url))
     gryf.bio = doc.css(".subject-description p").text
+    gryf.sorting_hat_poem = doc.css(".quote-artefact p").text
 
