@@ -34,21 +34,16 @@ def house_choice
             case input
             when "1"
                 self.get_house_bio("https://www.pottermore.com/collection/all-about-gryffindor")
-                puts "Bio:" house.bio
-                puts "Sorting Hat Poem:" house.sorting_hat_poem
 
             when "2"
                 self.get_house_bio("https://www.pottermore.com/collection/all-about-hufflepuff")
-                puts "Bio:" house.bio
-                puts "Sorting Hat Poem:" house.sorting_hat_poem
+
             when "3"
                 self.get_house_bio("https://www.pottermore.com/collection/all-about-ravenclaw")
-                puts "Bio:" house.bio
-                puts "Sorting Hat Poem:" house.sorting_hat_poem
+
             when "4"
                 self.get_house_bio("https://www.pottermore.com/collection/all-about-slytherin")
-                puts "Bio:" house.bio
-                puts "Sorting Hat Poem:" house.sorting_hat_poem
+
             else
                 puts "Please try again"
             end

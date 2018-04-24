@@ -8,6 +8,8 @@ def self.get_house_bio(url)
     doc = Nokogiri::HTML(open(url))
     house.bio = doc.css(".subject-description p").text
     house.sorting_hat_poem = doc.css(".quote-artefact p").text
+    puts "Bio:" #{house.bio}
+    puts "Sorting Hat Poem:" #{house.sorting_hat_poem}
 end
 
 
