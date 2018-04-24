@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 
-require_relative '../bin/console'
+require "bundler/setup"
 require_relative '../lib/hogwarts/cli'
 require_relative '../lib/hogwarts/scraping'
 require_relative '../lib/hogwarts/studies'
