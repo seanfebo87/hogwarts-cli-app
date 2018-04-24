@@ -52,5 +52,6 @@ def house_choice
             else
                 puts "Please try again"
             end
-
     end
+end
+end
