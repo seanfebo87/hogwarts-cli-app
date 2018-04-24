@@ -1,12 +1,7 @@
 class Hogwarts::Studies
-    attr_accessor :name, :url, :bio
-
-
-def call
-    list
-end
-
-def list
-    Scraping.subject_list("http://wwo.wikidot.com/subject")
-end
+    attr_accessor :name, :url
+    def initialize(name, url)
+        @name = name
+        @url = url
+    end
 end

@@ -3,12 +3,7 @@ require 'open-uri'
 require 'pry'
 class Scraping
 
-def self.get_house_bio(url)
-    def self.get_house_bio(url)
-    doc = Nokogiri::HTML(open(url))
-    puts doc.css(".subject-description p").text
-    puts doc.css(".quote-artefact p").text
-end
+
 
 
 def self.book_list(url)
@@ -24,9 +19,4 @@ def self.book_list(url)
     books
 end
 
-def subject_info(url)
-    doc = Nokogiri::HTML
-    doc.css(".description #CourseDesc").text
-end
-end
-end
+
