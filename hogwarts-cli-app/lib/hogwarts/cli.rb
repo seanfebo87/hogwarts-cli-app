@@ -1,4 +1,4 @@
-class Hogwarts::CLI
+class Cli
 
 def start
     puts "Welcome to Hogwarts!
@@ -14,4 +14,4 @@ def create_books
     new.map {|x| Hogwarts::Studies.new(x[:name], x[:url])}
 end
 
-
+end

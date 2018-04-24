@@ -1,6 +1,5 @@
 require 'nokogiri'
 require 'open-uri'
-require 'pry'
 class Scraping
 
 
@@ -19,4 +18,4 @@ def self.book_list(url)
     books
 end
 
-
+end
