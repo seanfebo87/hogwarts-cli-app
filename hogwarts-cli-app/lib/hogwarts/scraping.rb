@@ -11,7 +11,7 @@ def self.get_house_bio(url)
 end
 
 
-def self.subject_list(url)
+def self.book_list(url)
     books = []
     doc = Nokogiri::HTML(open(url))
     lists = doc.css(".col-md-12 ul li a")
@@ -27,5 +27,6 @@ end
 def subject_info(url)
     doc = Nokogiri::HTML
     doc.css(".description #CourseDesc").text
+end
 end
 end
