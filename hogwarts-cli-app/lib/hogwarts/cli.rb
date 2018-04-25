@@ -2,25 +2,31 @@ class Hogwarts::CLI
 
 def start
     puts "Welcome to Hogwarts!"
-    puts "Please choose a magical category to learn more about..."
     puts ""
     puts "1. TextBooks"
     puts "2. Atlas of Hogwarts"
     menu
+    goodbye
 end
 
 
 def menu
     books = make_books
     atlas = make_atlas
+    input = nil
+    puts ""
+    puts "Enter the number of the category you would like a list of or 'exit to leave."
     input = gets.strip
-    if input.to_i == 1
+    while input != "exit"
+      case input
+      when "1"
         list_books(books)
-    elsif input.to_i == 2
+      when "2"
         list_atlas(atlas)
-    else
-      "Please try again"
-    end
+      else
+        puts "Please try again"
+      end
+  end
 end
 
 def make_books
@@ -44,7 +50,7 @@ def list_books(books)
       puts "#{i}. #{title.name}"
     end
     puts ""
-    puts "Please select a book for link."
+    puts "Please select a book number for link or type 'exit' for main menu."
     menu_book
   end
 
@@ -54,12 +60,12 @@ def list_books(books)
 
 def menu_book
     input = gets.strip
-    if input.to_i > 0 && input.to_i <= 35
+      if input.to_i > 0 && input.to_i <= 35
       link = Hogwarts::Studies.all[input.to_i-1]
       puts "#{link.url}"
-    else
-        "Please try again."
-    end
+      else input == "exit"
+        start
+  end
 end
 
 def list_atlas(atlas)
@@ -68,7 +74,7 @@ def list_atlas(atlas)
       puts "#{i}. #{title.name}"
     end
     puts ""
-    puts "Please select a book for link."
+    puts "Please select a map for link or 'exit' for main menu."
     menu_atlas
   end
 
@@ -77,9 +83,11 @@ def menu_atlas
     if input.to_i > 0 && input.to_i <= 19
       link = Hogwarts::Atlas.all[input.to_i-1]
       puts "#{link.url}"
-    else
-        "Please try again."
+    else input == exit
+        start
     end
 end
 
+def goodbye
+  puts "Thanks for coming!"
 end
