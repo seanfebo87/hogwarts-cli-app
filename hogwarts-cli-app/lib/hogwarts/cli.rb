@@ -59,12 +59,17 @@ def list_books(books)
 
 
 def menu_book
-    input = gets.strip
+    input = nil
+    while input != "main"
+    input = gets.strip.downcase
       if input.to_i > 0 && input.to_i <= 35
       link = Hogwarts::Studies.all[input.to_i-1]
       puts "#{link.url}"
-      else input == "exit"
-        start
+
+      if input == "exit"
+          start
+      else
+          puts "Please try again!"
   end
 end
 
